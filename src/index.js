@@ -27,8 +27,7 @@ function postToy(toy_data) {
     .then((obj_toy) => {
       let new_toy = renderToys(obj_toy)
       divCollect.append(new_toy)
-    })
-}
+    })}
 
 function likes(e) {
   e.preventDefault()
@@ -77,10 +76,7 @@ function renderToys(toy) {
   divCollect.append(divCard)
 }
 
-
-// add listener to 'Add Toy' button to show or hide form
 addBtn.addEventListener('click', () => {
-  // hide & seek with the form
   addToy = !addToy
   if (addToy) {
     toyForm.style.display = 'block'
@@ -93,11 +89,8 @@ addBtn.addEventListener('click', () => {
   }
 })
 
-// start by getting all toys
-
 getToys().then(toys => {
   toys.forEach(toy => {
-    //function to render toys goes here or something
     renderToys(toy)
   })
 })
